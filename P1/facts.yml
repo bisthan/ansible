@@ -1,0 +1,7 @@
+---
+- hosts: all
+  connection: ssh
+  become: yes
+  user: subin
+  gather_facts: yes
+  
