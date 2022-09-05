@@ -5,13 +5,13 @@
   task:
   - name: install git 
     yum: 
-      - name: git
+      - name: tree
         state: present
-    when: ansibe_os_family=="RedHat"
+    when: ansibe_os_family=="Debian"
 
   - name: start git 
     yum: 
-      - name: git
+      - name: tree
         state: started
-    when: ansibe_os_family=="RedHat"
+    when: ansibe_os_family=="Debian"
 
