@@ -1,0 +1,17 @@
+---
+- host: all
+  become: yes
+  connection: ssh
+  task:
+  - name: install git 
+    yum: 
+      - name: git
+        state: present
+    when: ansibe_os_family=="RedHat"
+
+  - name: start git 
+    yum: 
+      - name: git
+        state: started
+    when: ansibe_os_family=="RedHat"
+
