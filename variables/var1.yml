@@ -1,0 +1,17 @@
+---
+- host: all
+  become: yes
+  gather_facts: yes
+  task: 
+  - name: i want to install apache2 webserver
+    apt: 
+     name: "{{mywebpackonubuntu}}"
+     state: present
+    when: ansible_os_family=="Debian"
+
+  - name: i want to install java 
+    yum:
+     name: "{{mywebpackonredhat}}"
+     state: present
+    when: ansible_os_family=="RedHat"
+
